@@ -1,5 +1,7 @@
+HU-01 – Autenticación de usuarios
 Feature: Autenticación de usuarios
 
+escenario feliz
   Scenario: Inicio de sesión exitoso
     Given que el usuario se encuentra en la pantalla de inicio de sesión
     And posee una cuenta registrada en el sistema
@@ -10,6 +12,7 @@ Feature: Autenticación de usuarios
     And debe permitir el acceso al sistema
     And debe mostrar el panel principal correspondiente a su rol
 
+escenario Alternativo/Error
   Scenario: Inicio de sesión con contraseña incorrecta
     Given que el usuario se encuentra en la pantalla de inicio de sesión
     And posee una cuenta registrada en el sistema
@@ -20,6 +23,7 @@ Feature: Autenticación de usuarios
     And debe mostrar un mensaje indicando que las credenciales son incorrectas
     And no debe permitir el acceso al sistema
 
+escenario Alternativo/Error
   Scenario: Inicio de sesión con campos incompletos
     Given que el usuario se encuentra en la pantalla de inicio de sesión
     When intenta iniciar sesión sin completar todos los campos requeridos
