@@ -1,5 +1,7 @@
 Feature: Gestión de proveedores
 
+HU-02 – Registrar proveedor
+escenario feliz
   Scenario: Registrar un proveedor correctamente
     Given que el administrador se encuentra en el módulo de proveedores
     When registra la información requerida del proveedor
@@ -7,12 +9,15 @@ Feature: Gestión de proveedores
     Then el sistema debe registrar el proveedor
     And debe mostrar un mensaje de confirmación
 
+escenario Alternativo/Error
   Scenario: Registrar un proveedor con información incompleta
     Given que el administrador se encuentra en el módulo de proveedores
     When intenta registrar un proveedor sin completar los datos obligatorios
     Then el sistema debe rechazar el registro
     And debe mostrar un mensaje indicando los campos faltantes
 
+HU-03 – Vincular medicamentos con proveedor
+escenario feliz
   Scenario: Vincular un medicamento con un proveedor
     Given que existe un proveedor registrado
     And existe un medicamento registrado
@@ -22,6 +27,7 @@ Feature: Gestión de proveedores
     Then el sistema debe registrar la relación entre proveedor y medicamento
     And debe mostrar un mensaje de confirmación
 
+escenario Alternativo/Error
   Scenario: Vincular un medicamento con un proveedor inexistente
     Given que el administrador se encuentra en el módulo de proveedores
     When intenta vincular un medicamento a un proveedor que no existe
